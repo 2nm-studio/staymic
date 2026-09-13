@@ -1,0 +1,45 @@
+StayMic/Resources/Assets.xcassets/AccentColor.colorset/Contents.json
+  s_d97c1e555c2415::t_66dd9a5dfa75eb 1-20
+StayMic/Resources/StayMic.entitlements
+  s_d97c1e555c2415::t_589678b3de24e6 1-8
+LICENSE
+  s_d97c1e555c2415::t_70cb7d671155cc 1-21
+StayMic/Resources/Assets.xcassets/Contents.json
+  s_d97c1e555c2415::t_b77700d27be146 1-6
+StayMic.xcodeproj/xcshareddata/xcschemes/StayMic.xcscheme
+  s_d97c1e555c2415::t_c37bc976812bc9 1-91
+StayMic.xcodeproj/project.pbxproj
+  s_d97c1e555c2415::t_c37bc976812bc9 1-425
+.gitignore
+  s_d97c1e555c2415::t_911edd1ed6c82a 1-13,17-37
+  s_d97c1e555c2415::t_5278d1e78b2a01 14-16
+StayMic/Utilities/Log.swift
+  s_d97c1e555c2415::t_1286f8ff8ab1fd 1-15
+StayMic.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+  s_d97c1e555c2415::t_c37bc976812bc9 1-7
+StayMic/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json
+  s_d97c1e555c2415::t_bc50a9b15b60b8 1-18
+StayMic/Resources/Info.plist
+  s_d97c1e555c2415::t_8f3f056980cba4 1-4,31-32
+  s_d97c1e555c2415::t_c37bc976812bc9 5-30
+project.yml
+  s_d97c1e555c2415::t_0e52a74fc9f261 47
+  s_d97c1e555c2415::t_31cfc3eed05c57 5
+  s_d97c1e555c2415::t_fd8d063cfb3e6d 1-4,6-46,48-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9a14dc1557c5d46e7a9b564661f188f633373ceb",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
