@@ -1,0 +1,24 @@
+README.md
+  s_d97c1e555c2415::t_fffd86d3b5d7b3 175-183
+  s_d97c1e555c2415::t_d043ef7ad1742a 3-4
+icon/StayMic-icon.svg
+  s_d97c1e555c2415::t_07ac08a5511987 1-50
+StayMic/Resources/Assets.xcassets/AppIcon.appiconset/Contents.json
+  s_d97c1e555c2415::t_d48612ceb21d74 3-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "65184c30010425e6e8edb80e0c612ab7c1a8d5d9",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
