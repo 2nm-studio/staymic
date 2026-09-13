@@ -1,0 +1,25 @@
+StayMic/UI/MicrophoneRow.swift
+  s_d97c1e555c2415::t_4bde3e41a9f776 1-107
+StayMic/UI/MenuBarView.swift
+  s_d97c1e555c2415::t_2da1ea8adcbca8 1-95
+StayMic/UI/SettingsView.swift
+  s_d97c1e555c2415::t_44d9002c093868 1-136
+StayMic/App/StayMicApp.swift
+  s_d97c1e555c2415::t_3845024838ec48 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "46b0a4f5aff45a2493f56025f7ed7a9cb65bb680",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
