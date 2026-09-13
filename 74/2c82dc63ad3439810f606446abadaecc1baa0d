@@ -1,0 +1,23 @@
+StayMic/Audio/AudioDeviceMonitor.swift
+  s_d97c1e555c2415::t_6c8ea374f47436 238-242,244
+StayMic/Controllers/VolumeLockController.swift
+  s_d97c1e555c2415::t_6ab9f235d4ca7c 34-39,43
+StayMic/UI/MicrophoneRow.swift
+  s_d97c1e555c2415::t_e656eb6d3107d7 86-87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "742c82dc63ad3439810f606446abadaecc1baa0d",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
