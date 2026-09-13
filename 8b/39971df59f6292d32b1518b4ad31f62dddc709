@@ -1,0 +1,21 @@
+StayMic/Audio/AudioDeviceMonitor.swift
+  s_d97c1e555c2415::t_906cca6db34a27 301-320
+StayMic/UI/SettingsView.swift
+  s_d97c1e555c2415::t_8354946ee2aef3 105-108,119-126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8b39971df59f6292d32b1518b4ad31f62dddc709",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
