@@ -1,0 +1,21 @@
+StayMic/Controllers/InputDeviceLockController.swift
+  s_d97c1e555c2415::t_395a5ff85b9935 1-48
+StayMic/Controllers/VolumeLockController.swift
+  s_d97c1e555c2415::t_3557e523407470 1-70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d1670b8bb60308c6979fb5fbb9007ee617ba1be7",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
