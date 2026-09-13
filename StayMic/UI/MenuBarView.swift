@@ -31,6 +31,14 @@ struct MenuBarView: View {
         .padding(.vertical, 10)
     }
 
+    /// Above this many rows we scroll; below it we size to content. A plain
+    /// `ScrollView` inside a `.window`-style `MenuBarExtra` can otherwise
+    /// collapse to near-zero height, since the extra's auto-sizing doesn't
+    /// reliably infer a `ScrollView`'s intrinsic content size the way a
+    /// normal window does -- an explicit, non-scrolling layout for the
+    /// common case (a handful of microphones) sidesteps that entirely.
+    private static let maxRowsBeforeScrolling = 6
+
     @ViewBuilder
     private var deviceList: some View {
         if deviceMonitor.devices.isEmpty {
@@ -38,18 +46,24 @@ struct MenuBarView: View {
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .padding(20)
-        } else {
+        } else if deviceMonitor.devices.count > Self.maxRowsBeforeScrolling {
             ScrollView {
-                VStack(spacing: 2) {
-                    ForEach(deviceMonitor.devices) { device in
-                        MicrophoneRow(device: device)
-                    }
-                }
-                .padding(.vertical, 4)
-                .padding(.horizontal, 4)
+                deviceRows
             }
-            .frame(maxHeight: 380)
+            .frame(height: 380)
+        } else {
+            deviceRows
         }
+    }
+
+    private var deviceRows: some View {
+        VStack(spacing: 2) {
+            ForEach(deviceMonitor.devices) { device in
+                MicrophoneRow(device: device)
+            }
+        }
+        .padding(.vertical, 4)
+        .padding(.horizontal, 4)
     }
 
     private var footer: some View {
