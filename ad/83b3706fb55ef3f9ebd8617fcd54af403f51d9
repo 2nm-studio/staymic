@@ -1,0 +1,19 @@
+.github/workflows/release.yml
+  s_d97c1e555c2415::t_a683c3d0c84d48 1-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ad83b3706fb55ef3f9ebd8617fcd54af403f51d9",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
