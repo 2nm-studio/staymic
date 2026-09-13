@@ -1,0 +1,50 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22C687"/>
+      <stop offset="55%" stop-color="#12A06B"/>
+      <stop offset="100%" stop-color="#0A6B45"/>
+    </linearGradient>
+
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.20"/>
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="badge" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#FFC94D"/>
+      <stop offset="100%" stop-color="#F0A417"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#04331F" flood-opacity="0.35"/>
+    </filter>
+
+    <filter id="badgeShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#5A3B00" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- macOS-style rounded-square canvas -->
+  <rect x="0" y="0" width="1024" height="1024" rx="224" ry="224" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1024" height="1024" rx="224" ry="224" fill="url(#gloss)"/>
+
+  <!-- Microphone glyph -->
+  <g filter="url(#softShadow)">
+    <rect x="402" y="256" width="220" height="384" rx="110" ry="110" fill="#FFFFFF"/>
+    <path d="M 340 566 A 172 172 0 0 0 684 566" fill="none" stroke="#FFFFFF" stroke-width="46" stroke-linecap="round"/>
+    <line x1="512" y1="738" x2="512" y2="800" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round"/>
+    <line x1="450" y1="800" x2="574" y2="800" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round"/>
+  </g>
+
+  <!-- Lock badge: the two "stay" behaviors (volume + device) both boil down to a lock -->
+  <g filter="url(#badgeShadow)">
+    <circle cx="742" cy="738" r="132" fill="url(#badge)"/>
+    <circle cx="742" cy="738" r="132" fill="none" stroke="#8A5A00" stroke-opacity="0.25" stroke-width="4"/>
+    <path d="M 700 722 v -26 a 42 42 0 0 1 84 0 v 26" fill="none" stroke="#7A4E00" stroke-width="16" stroke-linecap="round"/>
+    <rect x="690" y="718" width="104" height="80" rx="18" ry="18" fill="#7A4E00"/>
+    <circle cx="742" cy="752" r="12" fill="#FFC94D"/>
+    <rect x="736" y="752" width="12" height="24" rx="6" fill="#FFC94D"/>
+  </g>
+</svg>

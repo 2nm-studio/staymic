@@ -1,5 +1,7 @@
 # StayMic
 
+<img src="icon/StayMic-icon.png" alt="StayMic app icon" width="128" height="128">
+
 [![Build](https://github.com/2nm-studio/staymic/actions/workflows/build.yml/badge.svg)](https://github.com/2nm-studio/staymic/actions/workflows/build.yml)
 [![Latest release](https://img.shields.io/github/v/release/2nm-studio/staymic?include_prereleases)](https://github.com/2nm-studio/staymic/releases)
 [![Platform](https://img.shields.io/badge/platform-macOS%2014%2B-lightgrey)](#installation)
@@ -169,6 +171,15 @@ correct, including one StayMic just wrote, triggers no further write.
   see [Installation](#installation). Contributions adding Developer ID
   signing and notarization to the release workflow are welcome; see
   the note in [`.github/workflows/release.yml`](.github/workflows/release.yml).
+
+## Icon
+
+The app icon is designed as vector source at
+[`icon/StayMic-icon.svg`](icon/StayMic-icon.svg), with rendered
+[PNG](icon/StayMic-icon.png) and [JPG](icon/StayMic-icon.jpg) variants
+alongside it. The actual `.app` icon set used by Xcode
+(`StayMic/Resources/Assets.xcassets/AppIcon.appiconset`) is rasterized
+from that same SVG at each required size, so all of them stay in sync.
 
 ## Contributing
 
