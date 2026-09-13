@@ -1,0 +1,23 @@
+project.yml
+  s_d97c1e555c2415::t_77ff985858773d 12
+.github/workflows/release.yml
+  s_d97c1e555c2415::t_a7c77d64dbcaea 28,36
+StayMic.xcodeproj/project.pbxproj
+  s_d97c1e555c2415::t_88d2e3198fa8e2 328,390
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6a070235bd1418261412d555bcfedb89c16f01f1",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
