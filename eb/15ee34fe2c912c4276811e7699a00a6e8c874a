@@ -1,0 +1,21 @@
+StayMic.xcodeproj/project.pbxproj
+  s_d97c1e555c2415::t_80972985596565 328,390
+project.yml
+  s_d97c1e555c2415::t_b3670af9425633 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "eb15ee34fe2c912c4276811e7699a00a6e8c874a",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
