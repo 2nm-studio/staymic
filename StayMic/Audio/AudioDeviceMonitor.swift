@@ -235,17 +235,17 @@ final class AudioDeviceMonitor: ObservableObject {
 
     // MARK: - UI-facing actions
 
-    /// The user dragged StayMic's own volume slider.
+    /// The user dragged StayMic's own volume slider. The menu bar disables
+    /// the slider while the volume lock is on, so this guard is a defense in
+    /// depth: a locked device's target only ever changes by unlocking,
+    /// adjusting, and re-locking -- never implicitly through a drag that
+    /// could race a lock-driven restore.
     func userDidChangeVolume(uid: String, value: Float) {
+        guard !volumeLockController.isLockEnabled(for: uid) else { return }
         guard let deviceID = CoreAudioManager.deviceID(forUID: uid) else { return }
         let elements = CoreAudioManager.volumeElements(for: deviceID)
         CoreAudioManager.setAggregateVolume(deviceID, elements: elements, value: value)
         updateDevice(uid: uid) { $0.volume = value }
-
-        volumeLockController.userDidSetVolume(uid, value: value)
-        if volumeLockController.isLockEnabled(for: uid) {
-            updateDevice(uid: uid) { $0.lockedVolume = value }
-        }
     }
 
     func setVolumeLockEnabled(_ enabled: Bool, uid: String) {

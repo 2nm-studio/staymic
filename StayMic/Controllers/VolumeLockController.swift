@@ -31,24 +31,20 @@ final class VolumeLockController {
         preferences.state(for: uid).lockedVolume
     }
 
-    /// Turns the lock on or off. Enabling with no prior target captures
-    /// `currentVolume` as the value to protect going forward.
+    /// Turns the lock on or off. Enabling always captures `currentVolume` as
+    /// the value to protect going forward -- re-enabling a lock re-arms it at
+    /// whatever the slider is at now, rather than silently resurrecting a
+    /// stale target from a previous lock/unlock cycle. The menu bar disables
+    /// the slider while locked, so the target only ever changes by way of an
+    /// unlock-adjust-relock cycle, never while a restore could race it.
     func setLockEnabled(_ enabled: Bool, for uid: String, currentVolume: Float?) {
         preferences.updateState(for: uid) { state in
             state.volumeLockEnabled = enabled
-            if enabled, state.lockedVolume == nil {
+            if enabled {
                 state.lockedVolume = currentVolume
             }
         }
         Log.volumeLock.notice("Volume lock \(enabled ? "enabled" : "disabled", privacy: .public) for \(uid, privacy: .public)")
-    }
-
-    /// The user moved StayMic's own slider. This is an explicit, intentional
-    /// action — it redefines the lock target rather than being something to
-    /// protect against.
-    func userDidSetVolume(_ uid: String, value: Float) {
-        guard preferences.state(for: uid).volumeLockEnabled else { return }
-        preferences.updateState(for: uid) { $0.lockedVolume = value }
     }
 
     /// Called for every CoreAudio input-volume-changed event, whether or not

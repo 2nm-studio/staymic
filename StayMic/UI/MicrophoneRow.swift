@@ -83,6 +83,8 @@ struct MicrophoneRow: View {
     private var volumeSlider: some View {
         Slider(value: volumeBinding, in: 0...1)
             .controlSize(.small)
+            .disabled(device.volumeLockEnabled)
+            .help(device.volumeLockEnabled ? "Unlock the volume to adjust it" : "")
     }
 
     private var controls: some View {
