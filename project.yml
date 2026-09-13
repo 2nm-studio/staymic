@@ -1,0 +1,58 @@
+name: StayMic
+options:
+  bundleIdPrefix: studio.2nm
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_HARDENED_RUNTIME: YES
+
+targets:
+  StayMic:
+    type: application
+    platform: macOS
+    sources:
+      - path: StayMic
+    resources:
+      - path: StayMic/Resources/Assets.xcassets
+    info:
+      path: StayMic/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: StayMic
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSUIElement: true
+        LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
+        NSHumanReadableCopyright: "Copyright © 2026 2NM Studio. MIT Licensed."
+        LSApplicationCategoryType: "public.app-category.utilities"
+    entitlements:
+      path: StayMic/Resources/StayMic.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: studio.2nm.StayMic
+        PRODUCT_NAME: StayMic
+        INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 2NM Studio. MIT Licensed."
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+    capabilities: {}
+
+schemes:
+  StayMic:
+    build:
+      targets:
+        StayMic: all
+    run:
+      config: Debug
+    archive:
+      config: Release
