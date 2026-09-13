@@ -1,0 +1,22 @@
+StayMic/Services/PreferencesStore.swift
+  s_d97c1e555c2415::t_d5bb62e51b5790 1-14,20-83
+  s_d97c1e555c2415::t_ea6454127a1be0 15-19
+StayMic/Services/LaunchAtLoginManager.swift
+  s_d97c1e555c2415::t_6365504f6f4a15 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "767779ab1cfe6ea7889cf686e34f4130f568b5eb",
+  "prompts": {},
+  "sessions": {
+    "s_d97c1e555c2415": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0d951af-855b-415c-bd5e-e40351a0567c",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Mahmoud <mahmoudnjoya99@gmail.com>"
+    }
+  }
+}
