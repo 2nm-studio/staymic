@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build StayMic (Release)
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project StayMic.xcodeproj \
+            -scheme StayMic \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            clean build
+
+      # No Developer ID certificate/notarization credentials are configured
+      # for this repository yet, so the release build is ad-hoc/unsigned.
+      # macOS Gatekeeper will require a right-click > Open the first time
+      # (documented in the README). To add signing later: import a Developer
+      # ID Application certificate and an App Store Connect API key as
+      # repository secrets, codesign the .app with the hardened runtime
+      # entitlements, then run `xcrun notarytool` + `xcrun stapler` here.
+      - name: Package StayMic.app
+        run: |
+          APP_PATH="build/Build/Products/Release/StayMic.app"
+          ARCHIVE_NAME="StayMic-${GITHUB_REF_NAME}-macOS.zip"
+          ditto -c -k --sequesterRsrc --keepParent "$APP_PATH" "$ARCHIVE_NAME"
+          echo "ARCHIVE_NAME=$ARCHIVE_NAME" >> "$GITHUB_ENV"
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            "${ARCHIVE_NAME}" \
+            --title "StayMic ${GITHUB_REF_NAME}" \
+            --generate-notes
