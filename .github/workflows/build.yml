@@ -1,0 +1,47 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build (macOS, xcodebuild)
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Verify StayMic.xcodeproj matches project.yml
+        run: |
+          xcodegen generate
+          if ! git diff --quiet -- StayMic.xcodeproj; then
+            echo "::error::StayMic.xcodeproj is out of date with project.yml. Run 'xcodegen generate' locally and commit the result."
+            git diff --stat -- StayMic.xcodeproj
+            exit 1
+          fi
+
+      - name: Build StayMic
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project StayMic.xcodeproj \
+            -scheme StayMic \
+            -configuration Debug \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            clean build
