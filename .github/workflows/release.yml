@@ -25,6 +25,7 @@ jobs:
       - name: Build StayMic (Release)
         run: |
           set -o pipefail
+          VERSION="${GITHUB_REF_NAME#v}"
           xcodebuild \
             -project StayMic.xcodeproj \
             -scheme StayMic \
@@ -32,6 +33,7 @@ jobs:
             -destination 'platform=macOS' \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
+            MARKETING_VERSION="${VERSION}" \
             clean build
 
       # No Developer ID certificate/notarization credentials are configured
