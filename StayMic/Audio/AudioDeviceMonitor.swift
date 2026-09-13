@@ -298,4 +298,24 @@ final class AudioDeviceMonitor: ObservableObject {
             devices[index].isDefaultLockEnabled = devices[index].uid == lockedUID
         }
     }
+
+    /// Clears all persisted lock state for a device. Ghost rows (locked but
+    /// disconnected) have no other way to be un-locked from the UI, since a
+    /// disconnected device can't be unchecked via its own row controls.
+    func forgetDevice(uid: String) {
+        volumeLockController.setLockEnabled(false, for: uid, currentVolume: nil)
+        volumeLockController.forgetLockedVolume(for: uid)
+        if deviceLockController.lockedUID == uid {
+            deviceLockController.clearLock()
+        }
+
+        guard let index = devices.firstIndex(where: { $0.uid == uid }) else { return }
+        if devices[index].isConnected {
+            devices[index].volumeLockEnabled = false
+            devices[index].lockedVolume = nil
+            devices[index].isDefaultLockEnabled = false
+        } else {
+            devices.remove(at: index)
+        }
+    }
 }

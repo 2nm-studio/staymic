@@ -102,6 +102,10 @@ private struct DeviceSettingsRow: View {
         deviceMonitor.devices.first(where: { $0.uid == uid })?.isConnected ?? false
     }
 
+    private var hasAnyLock: Bool {
+        preferences.state(for: uid).volumeLockEnabled || preferences.lockedDefaultDeviceUID == uid
+    }
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
@@ -112,6 +116,14 @@ private struct DeviceSettingsRow: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
+            if hasAnyLock {
+                Button("Forget") {
+                    deviceMonitor.forgetDevice(uid: uid)
+                }
+                .buttonStyle(.link)
+                .font(.caption)
+                .help("Clear all locks StayMic remembers for this device.")
+            }
             Circle()
                 .fill(isConnected ? Color.green : Color.secondary.opacity(0.4))
                 .frame(width: 8, height: 8)
